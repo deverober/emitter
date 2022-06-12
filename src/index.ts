@@ -1,23 +1,3 @@
-import { EmitterObject } from "./objects/EmitterObject";
-import { EventManager } from "./events/EventManager";
-
-// const eventManager = EventManager.getInstance();
-
-// const obj = new EmitterObject();
-// const obj1 = new EmitterObject();
-
-// obj.subscribeToTargettedEvent({
-// 	name: "test",
-// 	callback: () => {
-// 		console.log("Test passed in obj.");
-// 	},
-// });
-
-// obj1.subscribeToTargettedEvent({
-// 	name: "test",
-// 	callback: () => {
-// 		console.log("Test passed in obj1");
-// 	},
-// });
-
-// EventManager.emitToAll("test");
+export * from "./events/EventManager";
+export * from "./events/EventTypes";
+export * from "./objects/EmitterObject";
