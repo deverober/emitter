@@ -3,9 +3,18 @@ import { EventManager } from "../events/EventManager";
 import { Unsubscribe, EmitterEvent } from "../events/EventTypes";
 
 /*
+	Attributes used to create an Emitter Objet. Alternatively, just subclass EmitterObject.
+*/
+export interface EmmitterObjectAttributes {
+	_id: string;
+	subscribedEvents: Unsubscribe[];
+	subscribeToTargettedEvent({ name, callback }: EmitterEvent): void;
+	unsubscribeFromEvent(name: string): void;
+}
+/*
 	A class that can receive events
 */
-export class EmitterObject {
+export class EmitterObject implements EmmitterObjectAttributes {
 	// Randomly generated id to tag events for individual use
 	_id: string = randomBytes(4).toString("hex");
 	/*
